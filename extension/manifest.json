@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Discovery AI — Productivity Tracker",
+  "description": "Desktop-aligned telemetry with a linked screenshot per event (except session login/logout).",
+  "version": "2.2.5",
+  "permissions": [
+    "tabs",
+    "storage",
+    "history",
+    "activeTab",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "Discovery AI — Tracking Active",
+    "default_popup": "popup.html"
+  }
+}

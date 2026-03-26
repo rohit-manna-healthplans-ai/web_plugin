@@ -1,0 +1,48 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Node projects
+node_modules/
+coverage/
+dist/
+build/
+.cache/
+.turbo/
+.next/
+*.tsbuildinfo
+
+# Python backend artifacts (if present)
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+ENV/
+env/
+
+# Extension packaging artifacts
+*.zip
+*.crx
+*.pem
+
