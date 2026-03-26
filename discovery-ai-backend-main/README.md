@@ -1,5 +1,24 @@
 ### Discovery AI Backend Server     
 
+#### Deploy on Render (GitHub -> auto redeploy)
+
+1. Push this backend code to GitHub.
+2. In Render, click **New +** -> **Web Service** -> **Build and deploy from a Git repository**.
+3. Select your repo and set:
+   - **Root Directory:** `discovery-ai-backend-main`
+   - **Runtime:** `Docker`
+4. Add required environment variables in Render:
+   - `MONGO_URI`
+   - `JWT_SECRET`
+   - `EXT_API_KEY` (if your extension collect API uses it)
+   - Any other variables used in your `.env`
+5. Click **Create Web Service**.  
+   Render will build using this folder's `Dockerfile` and auto-redeploy on every push to the selected branch.
+
+**Notes**
+- If your health check fails, verify your app is listening on `0.0.0.0` and using Render's `PORT`.
+- Keep secrets only in Render Environment settings (never commit real `.env` values).
+
 #### Deploy on Railway (GitHub → auto redeploy)
 
 1. **Connect GitHub** in Railway: New Project → Deploy from GitHub repo → select your repo.
