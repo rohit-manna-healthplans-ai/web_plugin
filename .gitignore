@@ -27,6 +27,18 @@ build/
 .next/
 *.tsbuildinfo
 
+# Monorepo nested project artifacts
+discovery-ai-backend-main/node_modules/
+discovery-ai-backend-main/coverage/
+discovery-ai-backend-main/dist/
+discovery-ai-backend-main/build/
+discovery-ai-backend-main/.env
+discovery-ai-backend-main/.env.*
+!discovery-ai-backend-main/.env.example
+
+# Never keep nested repo metadata in parent repo
+discovery-ai-backend-main/.git/
+
 # Python backend artifacts (if present)
 __pycache__/
 *.py[cod]
