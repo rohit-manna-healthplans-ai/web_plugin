@@ -123,6 +123,7 @@ export function buildCanonicalRows({
   if (type === 'screenshot' && screenshotId) {
     const screenshotUrl =
       getScreenshotImageUrlFromData(storedData) || (storedData && storedData.imageUrl) || ''
+    const meta = item.extensionMeta && typeof item.extensionMeta === 'object' ? item.extensionMeta : {}
     screenshotRow = {
       screenshot_id: screenshotId,
       user_id: item.userId,
@@ -132,6 +133,8 @@ export function buildCanonicalRows({
       window_title: windowTitle,
       application_tab,
       operation: String(storedData?.reason || type || 'screenshot'),
+      browser_name: meta.browserName ? String(meta.browserName).slice(0, 80) : '',
+      client_os: meta.os ? String(meta.os).slice(0, 80) : '',
       screenshot_url: screenshotUrl,
       created_at: new Date().toISOString(),
       legacy_event_id: insertedId

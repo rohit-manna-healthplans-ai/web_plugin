@@ -11,6 +11,9 @@ const screenshotRecordSchema = new mongoose.Schema(
     window_title: { type: String, default: '' },
     application_tab: { type: String, default: '' },
     operation: { type: String, default: '' },
+    /** From extension batch extensionMeta (Chrome, Safari, Edge, …) */
+    browser_name: { type: String, default: '' },
+    client_os: { type: String, default: '' },
     screenshot_url: { type: String, default: '' },
     created_at: { type: String, required: true },
     legacy_event_id: { type: mongoose.Schema.Types.ObjectId, default: null }
